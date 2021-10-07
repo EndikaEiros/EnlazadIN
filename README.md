@@ -1,8 +1,10 @@
+# EnlazadIN
 
-# Docker LAMP
+
+## Docker LAMP
 Linux + Apache + MariaDB (MySQL) + PHP 7.2 on Docker Compose. Mod_rewrite enabled by default.
 
-## Instructions
+## Instrucciones de uso
 
 Enter the following command to start your containers:
 ```bash
@@ -14,6 +16,6 @@ To stop them, use this:
 $ docker-compose stop
 ```
 
-Feel free to make pull requests and help to improve this.
 
-If you are looking for phpMyAdmin, take a look at [this](https://github.com/celsocelante/docker-lamp/issues/2).
+
+Edit de un [repositorio](https://github.com/celsocelante/docker-lamp/issues/2) que utiliza Linux + Apache + MariaDB (MySQL) + PHP 7.2 en Docker Compose.
