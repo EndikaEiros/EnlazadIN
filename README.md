@@ -1,21 +1,19 @@
 # EnlazadIN
-
-
-## Docker LAMP
-Linux + Apache + MariaDB (MySQL) + PHP 7.2 on Docker Compose. Mod_rewrite enabled by default.
-
+## Que es
+EnlazadIN es una pagina en la que puedes hacer criticas a tus compañeros de trbajao/jefes de forma anonima.
+Solamente se podran realizar criticas constructivas, el uso de la pagina para enviar insultos y ofensas no esta permitido.
 ## Instrucciones de uso
-
-Enter the following command to start your containers:
+Comando para inicializar el container:
 ```bash
 $ docker-compose up -d
 ```
 
-To stop them, use this:
+Comando parar parar el container:
 ```bash
 $ docker-compose stop
 ```
 
+## Se ha editado a  
 
-
-Edit de un [repositorio](https://github.com/celsocelante/docker-lamp/issues/2) que utiliza Linux + Apache + MariaDB (MySQL) + PHP 7.2 en Docker Compose.
+Edit de este [repositorio](https://github.com/celsocelante/docker-lamp/issues/2) de github. 
+Utiliza Linux + Apache + MariaDB (MySQL) + PHP 7.2 en Docker Compose.
