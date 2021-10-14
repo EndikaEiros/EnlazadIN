@@ -11,7 +11,6 @@ function comprobar_datos(){
     console.log("Enviando formulario...");
 
     var mensajeError = [];
-
     if (nombre === null || nombre === ''){
         mensajeError.push("Introduzca su nombre");
     }
@@ -29,9 +28,7 @@ function comprobar_datos(){
     if (telefono === null || telefono === '' || telefono.length != 9){
         mensajeError.push("Introduzca un n&uacute;mero de tel&eacute;fono de nueve d&iacute;gitos");
     }
-    if (nacimiento.value === null || nacimiento.value === ''){
-        mensajeError.push("Introduzca su fecha de nacimiento");
-    }
+    validar_fecha(nacimiento,mensajeError);
     if (password === null || password === ''){
         mensajeError.push('Introduzca su contrase&ntilde;a');
     }
@@ -47,11 +44,12 @@ function validar_email(email,errores){
 function validar_dni(dni,errores){
     var num;
     var letra;
-    var regex_dni = /^\d{8}[a-zA-Z]$/;
+    var regex_dni = /^\d{8}-[a-zA-Z]$/;
 
     if (regex_dni.test(dni)){
-        numero = dni.substr(0,dni.length-1);
-        letra = dni.substr(dni.length-1,1);
+        partes_dni = dni.split("-")
+        numero = partes_dni[0]
+        letra = partes_dni[1]
         numero = numero % 23;
         var comprobacion = 'TRWAGMYFPDXBNJZSQVHLCKET';
         comprobacion = comprobacion.substring(numero,numero+1);
@@ -60,6 +58,22 @@ function validar_dni(dni,errores){
         }
     }
     else{
-        errores.push("Formato del DNI incorrecto")
+        errores.push("Formato del DNI debe de ser el n&uacute;mero y un gui&oacute;n seguido de la letra")
+    }
+}
+function validar_fecha(fecha,errores){
+    var partes_fecha = fecha.split("-");
+    if (partes_fecha.length != 3){
+        errores.push("La fecha tiene que seguir el formato 'dd/mm/aaaa'");
+    }
+    else{
+        var dia = partes_fecha[0];
+        var mes = partes_fecha[1];
+        var anio = partes_fecha[2];
+        var comprobar_dia_mes = /^\d{2}$/;
+        var comprobar_anio = /^\d{4}$/;
+        if(!comprobar_dia_mes.test(dia) || !comprobar_dia_mes.test(mes) || !comprobar_anio.test(anio)){
+            errores.push("La fecha tiene que seguir el formato 'dd/mm/aaaa");
+        }
     }
 }
