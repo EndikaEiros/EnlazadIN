@@ -6,10 +6,10 @@
   $password = "admin";
   $db = "database";
 
-  $conn = mysqli_connect('localhost','admin','admin','database');
+  $conn = mysqli_connect('localhost','admin','test','database');
   if ($conn) {
     echo "correcto";
-}
+  }
 
 
 $query = mysqli_query($conn, "SELECT * FROM usuarios")
