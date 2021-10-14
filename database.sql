@@ -37,4 +37,4 @@ CREATE TABLE 'usuarios' {
 INSERT INTO `usuarios` ('Nombre','Apellidos','Email','DNI','Telefono','Fecha_nacimiento','Contraseña') VALUES
 
 ('Endika','Eiros','endika.eiros@gmail.com',79008225,'2000/03/06'),
-('Iker','Valcarcer','ikervalcarcel@gmail.com',12345678,'2001/05/14');
+('Iker','Valcarcel','ikervalcarcel@gmail.com',12345678,'2001/05/14');
