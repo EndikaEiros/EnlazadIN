@@ -3,14 +3,13 @@
   // phpinfo();
   $hostname = "db";
   $username = "admin";
-  $password = "test";
+  $password = "admin";
   $db = "database";
 
-  $conn = mysqli_connect($hostname,$username,$password,$db);
-  if ($conn->connect_error) {
-    die("Database connection failed: " . $conn->connect_error);
-  }
-
+  $conn = mysqli_connect('localhost','admin','admin','database');
+  if ($conn) {
+    echo "correcto";
+}
 
 
 $query = mysqli_query($conn, "SELECT * FROM usuarios")
@@ -22,8 +21,6 @@ while ($row = mysqli_fetch_array($query)) {
     <td>{$row['id']}</td>
     <td>{$row['nombre']}</td>
    </tr>";
-   
-
 }
 
 ?>

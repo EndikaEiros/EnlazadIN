@@ -1,11 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Servidor: db
--- Tiempo de generación: 16-09-2020 a las 16:37:17
--- Versión del servidor: 10.5.5-MariaDB-1:10.5.5+maria~focal
--- Versión de PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,30 +19,22 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
-  `nombre` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE 'usuarios' {
+  'Nombre' varchar(20) NOT NULL,
+  'Apellidos' varchar(20) NOT NULL,
+  'Email' varchar(40) NOT NULL,
+  'DNI' int(8) NOT NULL,
+  'Telefono' int(8) NOT NULL,
+  'Fecha_nacimiento' varchar(20) NOT NULL,
+  'Contraseña' varchar(20) NOT NULL,
 
---
--- Volcado de datos para la tabla `usuarios`
---
+  PRIMARY KEY ('Email')
+  UNIQUE ('DNI','Teléfono') 
 
-INSERT INTO `usuarios` (`id`, `nombre`) VALUES
-(1, 'mikel'),
-(2, 'aitor');
+}
 
---
--- Índices para tablas volcadas
---
 
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-COMMIT;
+INSERT INTO `usuarios` ('Nombre','Apellidos','Email','DNI','Telefono','Fecha_nacimiento','Contraseña') VALUES
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+('Endika','Eiros','endika.eiros@gmail.com',79008225,'2000/03/06'),
+('Iker','Valcarcer','ikervalcarcel@gmail.com',12345678,'2001/05/14');
