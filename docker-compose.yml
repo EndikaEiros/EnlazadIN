@@ -1,4 +1,4 @@
-web:
+enlazadin:
    image: web
    environment:
      - ALLOW_OVERRIDE=true
@@ -30,5 +30,5 @@ phpmyadmin:
     - 8890:80
   environment:
     MYSQL_USER: admin
-    MYSQL_PASSWORD: admin
+    MYSQL_PASSWORD: test
     MYSQL_DATABASE: database

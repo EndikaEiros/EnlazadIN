@@ -4,7 +4,10 @@ EnlazadIN es una pagina en la que puedes hacer criticas a tus compañeros de trb
 Solamente se podran realizar criticas constructivas, el uso de la pagina para enviar insultos y ofensas no esta permitido.
 ## Instrucciones de uso
 Comando para inicializar el container:
+    
+Abrir la terminal en la carpeta de la aplicacion web
 ```bash
+$ docker build -t="enlazadin" .
 $ docker-compose up -d
 ```
 

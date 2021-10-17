@@ -1,40 +1,18 @@
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+CREATE TABLE usuarios (
+  Nombre varchar(20) NOT NULL,
+  Apellidos varchar(20) NOT NULL,
+  Email varchar(40) PRIMARY KEY,
+  DNI int(8) UNIQUE,
+  Telefono int(8) UNIQUE,
+  Fecha_nacimiento varchar(10) NOT NULL,
+  Contrasena varchar(20) NOT NULL
+
+);
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+INSERT INTO usuarios VALUES  ('Endika','Eiros','endika.eiros@gmail.com',79008225,671024023,'2000/03/06','dinosaurio');
+INSERT INTO usuarios VALUES  ('Iker','Valcarcel','ikervalcarcel@gmail.com',12345678,123456789,'2001/05/14','seguridad');
+INSERT INTO usuarios VALUES  ('juan','test1','test1@gmail.com',11111111,111111111,'2001/05/14','seguridad');
 
---
--- Base de datos: `database`
---
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE 'usuarios' {
-  'Nombre' varchar(20) NOT NULL,
-  'Apellidos' varchar(20) NOT NULL,
-  'Email' varchar(40) NOT NULL,
-  'DNI' int(8) NOT NULL,
-  'Telefono' int(8) NOT NULL,
-  'Fecha_nacimiento' varchar(20) NOT NULL,
-  'Contraseña' varchar(20) NOT NULL,
-
-  PRIMARY KEY ('Email')
-  UNIQUE ('DNI','Teléfono') 
-
-}
-
-
-INSERT INTO `usuarios` ('Nombre','Apellidos','Email','DNI','Telefono','Fecha_nacimiento','Contraseña') VALUES
-
-('Endika','Eiros','endika.eiros@gmail.com',79008225,'2000/03/06'),
-('Iker','Valcarcel','ikervalcarcel@gmail.com',12345678,'2001/05/14');
+COMMIT;
