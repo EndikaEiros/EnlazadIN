@@ -64,7 +64,7 @@ function validar_dni(dni,errores){
 function validar_fecha(fecha,errores){
     var partes_fecha = fecha.split("-");
     if (partes_fecha.length != 3){
-        errores.push("La fecha tiene que seguir el formato 'dd/mm/aaaa'");
+        errores.push("La fecha tiene que seguir el formato 'dd-mm-aaaa'");
     }
     else{
         var dia = partes_fecha[0];
@@ -73,7 +73,7 @@ function validar_fecha(fecha,errores){
         var comprobar_dia_mes = /^\d{2}$/;
         var comprobar_anio = /^\d{4}$/;
         if(!comprobar_dia_mes.test(dia) || !comprobar_dia_mes.test(mes) || !comprobar_anio.test(anio)){
-            errores.push("La fecha tiene que seguir el formato 'dd/mm/aaaa");
+            errores.push("La fecha tiene que seguir el formato 'dd-mm-aaaa");
         }
     }
 }
