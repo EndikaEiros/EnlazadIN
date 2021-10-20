@@ -1,4 +1,5 @@
 <?php
+ require("db_con.php");
 ?>
 <!DOCTYPE html>
 
