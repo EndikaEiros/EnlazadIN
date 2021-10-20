@@ -6,42 +6,40 @@ function comprobar_datos(){
     var telefono = document.registrarse.telefono.value;
     var nacimiento = document.registrarse.nacimiento.value;
     var password = document.registrarse.password.value;
-    var error = document.getElementById("error");
     var regex_nombre = /^[A-Za-z\s]+$/;
     console.log("Enviando formulario...");
 
     var mensajeError = [];
     if (nombre === null || nombre === ''){
-        mensajeError.push("Introduzca su nombre");
+        alert("Introduzca su nombre");
     }
     else if (!regex_nombre.test(nombre)){
-        mensajeError.push("Solo se pueden introducir letras")
+        alert("Solo se pueden introducir letras")
     }
     if (apellidos === null || apellidos === ''){
-        mensajeError.push("Introduzca sus apellidos");
+        alert("Introduzca sus apellidos");
     }
     else if (!regex_nombre.test(apellidos)){
-        mensajeError.push("Solo se pueden introducir letras")
+        alert("Solo se pueden introducir letras")
     }
-    validar_email(email,mensajeError);
+    validar_email(email);
     validar_dni(dni,mensajeError);
     if (telefono === null || telefono === '' || telefono.length != 9){
-        mensajeError.push("Introduzca un n&uacute;mero de tel&eacute;fono de nueve d&iacute;gitos");
+        alert("Introduzca un n\372mero de tel\351fono de nueve d\355gitos");
     }
-    validar_fecha(nacimiento,mensajeError);
+    validar_fecha(nacimiento);
     if (password === null || password === ''){
-        mensajeError.push('Introduzca su contrase&ntilde;a');
+        alert('Introduzca su contrase\361a');
     }
-    error.innerHTML = mensajeError.join("<br>");
     return false;
 }
-function validar_email(email,errores){
+function validar_email(email){
     var regex_email = /\S+@\S+\.\S+/;
     if (!regex_email.test(email)){
-        errores.push("Formato del email incorrecto");
+        alert("Formato del email incorrecto");
     }
 }
-function validar_dni(dni,errores){
+function validar_dni(dni){
     var num;
     var letra;
     var regex_dni = /^\d{8}-[a-zA-Z]$/;
@@ -54,17 +52,17 @@ function validar_dni(dni,errores){
         var comprobacion = 'TRWAGMYFPDXBNJZSQVHLCKET';
         comprobacion = comprobacion.substring(numero,numero+1);
         if (letra != comprobacion.toUpperCase()) {
-            errores.push("DNI incorrecto")
+            alert("DNI incorrecto")
         }
     }
     else{
-        errores.push("Formato del DNI debe de ser el n&uacute;mero y un gui&oacute;n seguido de la letra")
+        alert("Formato del DNI debe de ser el n\372mero y un gui\363n seguido de la letra")
     }
 }
-function validar_fecha(fecha,errores){
+function validar_fecha(fecha){
     var partes_fecha = fecha.split("-");
     if (partes_fecha.length != 3){
-        errores.push("La fecha tiene que seguir el formato 'dd-mm-aaaa'");
+        alert("La fecha tiene que seguir el formato 'dd-mm-aaaa'");
     }
     else{
         var dia = partes_fecha[0];
@@ -73,7 +71,7 @@ function validar_fecha(fecha,errores){
         var comprobar_dia_mes = /^\d{2}$/;
         var comprobar_anio = /^\d{4}$/;
         if(!comprobar_dia_mes.test(dia) || !comprobar_dia_mes.test(mes) || !comprobar_anio.test(anio)){
-            errores.push("La fecha tiene que seguir el formato 'dd-mm-aaaa");
+            alert("La fecha tiene que seguir el formato 'dd-mm-aaaa");
         }
     }
 }
