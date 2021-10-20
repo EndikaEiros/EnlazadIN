@@ -3,7 +3,7 @@
     margin: 0;
 }
 body{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: white;
     font-size: large;
 }
@@ -67,9 +67,28 @@ main .image{
     text-align: right;
     width: 800px;
 }
+#sobre-nosotros{
+    
+    margin-top: 320px;
+    margin-left: 60px;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+}
+#sobre-nosotros p{
+    width: 60%;
+    padding: 10px;
+    margin-left: 150px;
+}
+#sobre-nosotros img{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    margin-right: 150px;
+}
 footer{
     margin: 3px 3px;
-    position: absolute;
+    margin-top: 200px;
     bottom: 6px;
     width: 100%;
     font-size: smaller;
