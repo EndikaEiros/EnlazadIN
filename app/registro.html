@@ -6,21 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EnlazadIN</title>
     <link rel="shortcut icon" href="img/briefcase.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/registro.css">
 </head>
 <body>
-    <div class="block">
-        <form name="registrarse">
-            Nombre: <input type="text" name="nombre"><br>
-            Apellidos: <input type="text" name="apellidos"><br>
-            Email: <input type="text" name="email"><br>
-            DNI: <input type="text" name="dni"><br>
-            Teléfono: <input type="text" name="telefono"><br>
-            Fecha de nacimiento: <input type="text" name="nacimiento"><br>
-            Introducir contraseña: <input type="password" name="password"><br>
-            <input type="button" onclick = "return comprobar_datos()" value="enviar"><br>
-        </form>
+    <div id="main-container">
+        <header>
+            <div id="menu">
+                <ul>
+                    <li id="logo">
+                        <a href="index.html">
+                            <img src="img/briefcase.png" width="50">
+                        </a>
+                    </li>
+                    <li id="nombre-pagina">
+                        <h1>EnlazadIN</h1>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <form name="registrarse">
+                <h1>Registrarse</h1>
+                Nombre: <input type="text" name="nombre"><br>
+                Apellidos: <input type="text" name="apellidos"><br>
+                Email: <input type="text" name="email"><br>
+                DNI: <input type="text" name="dni"><br>
+                Teléfono: <input type="text" name="telefono"><br>
+                Fecha de nacimiento: <input type="text" name="nacimiento"><br>
+                Introducir contraseña: <input type="password" name="password"><br>
+                <input type="button" onclick = "return comprobar_datos()" value="enviar"><br>
+            </form>
+        </main>
+        <footer>
+            Icons made by <a href="" title="juicy_fish">juicy_fish</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </footer>
     </div>
-    
     <script src="js/registro.js"></script>
 </body>
 </html>

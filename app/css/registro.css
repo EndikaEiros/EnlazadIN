@@ -41,26 +41,26 @@ main{
 main form{
     font-size: 25px;
     width: 60%;
-    margin: 13% 5%;
+    margin: 8% 5%;
     padding: 0px 0px;
     text-align: right;
 }
 main form h1{
     font-size: 40px;
-    margin: 50px 0px;
+    margin: 5px 0px;
 }
 input[type="text"]{
     padding: 7px 25px;
     display: inline-block;
     vertical-align: middle;
-    margin: 70px 0px;
+    margin: 30px 0px;
     
 }
 input[type="password"]{
     padding: 7px 25px;
     display: inline-block;
     vertical-align: middle;
-    margin: 80px 0px;
+    margin: 30px 0px;
 }
 input[type="button"]{
     background-color:lightsalmon;
