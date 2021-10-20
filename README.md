@@ -7,7 +7,7 @@ Comando para inicializar el container:
     
 Abrir la terminal en la carpeta de la aplicacion web
 ```bash
-$ docker build -t="enlazadin" .
+$ docker build -t="web" .
 $ docker-compose up -d
 ```
 

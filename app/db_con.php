@@ -6,7 +6,7 @@
 
   $conn = mysqli_connect($hostname,$username,$password,$db);
   if ($conn) {
-    echo "correcto";
+    echo "Conexion establecida <br />";
   }
 
   $datos = mysqli_query($conn, 'SELECT * FROM usuarios ORDER BY DNI')

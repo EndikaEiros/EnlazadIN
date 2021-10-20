@@ -1,4 +1,4 @@
-enlazadin:
+web:
    image: web
    environment:
      - ALLOW_OVERRIDE=true
