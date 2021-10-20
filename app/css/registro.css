@@ -30,24 +30,24 @@ main{
     border-style:outset;
     border-color: black;
     width: 475px;
-    width: 50%;
+    width: 40%;
     height: 95%;
     padding-left: 2%;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, -50%); 
 }
 main form{
     font-size: 25px;
-    width: 60%;
+    width: 70%;
     margin: 8% 5%;
     padding: 0px 0px;
     text-align: right;
 }
 main form h1{
     font-size: 40px;
-    margin: 5px 0px;
+    margin: 2px 120px;
 }
 input[type="text"]{
     padding: 7px 25px;
@@ -70,11 +70,16 @@ input[type="button"]{
     cursor: pointer;
     font-size: 24px;
     padding: 20px 25px;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 input[type="button"]:hover{
     background-color:thistle;
+}
+#imagen img{
+    vertical-align: middle;
+    float: right;
+    width: 750px;
 }
 footer{
     margin: 3px 3px;
