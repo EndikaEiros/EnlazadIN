@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro EnlazadIN</title>
+    <title>EnlazadIN</title>
     <link rel="shortcut icon" href="img/briefcase.png" type="image/x-icon">
 </head>
 <body>
-    <form name="registrarse">
-        Nombre: <input type="text" name="nombre"><br>
-        Apellidos: <input type="text" name="apellidos"><br>
-        Email: <input type="text" name="email"><br>
-        DNI: <input type="text" name="dni"><br>
-        Teléfono: <input type="text" name="telefono"><br>
-        Fecha de nacimiento: <input type="text" name="nacimiento"><br>
-        Introducir contraseña: <input type="password" name="password"><br>
-        <input type="button" onclick = "return comprobar_datos()" value="enviar"><br>
-    </form>
-    <div id="error"></div>
+    <div class="block">
+        <form name="registrarse">
+            Nombre: <input type="text" name="nombre"><br>
+            Apellidos: <input type="text" name="apellidos"><br>
+            Email: <input type="text" name="email"><br>
+            DNI: <input type="text" name="dni"><br>
+            Teléfono: <input type="text" name="telefono"><br>
+            Fecha de nacimiento: <input type="text" name="nacimiento"><br>
+            Introducir contraseña: <input type="password" name="password"><br>
+            <input type="button" onclick = "return comprobar_datos()" value="enviar"><br>
+        </form>
+    </div>
+    
     <script src="js/registro.js"></script>
 </body>
 </html>
