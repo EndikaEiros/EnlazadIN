@@ -62,7 +62,7 @@ input[type="password"]{
     vertical-align: middle;
     margin: 30px 0px;
 }
-input[type="submit"]{
+button[type="button"]{
     background-color:lightsalmon;
     border: 0;
     border-radius: 3px;
@@ -73,7 +73,7 @@ input[type="submit"]{
     margin: 10px 0;
 }
 
-input[type="submit"]:hover{
+.button[type="button"]:hover{
     background-color:thistle;
 }
 #imagen img{

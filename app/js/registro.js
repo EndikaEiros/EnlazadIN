@@ -26,13 +26,19 @@ function comprobar_datos(){
         alert("Solo se pueden introducir letras")
         return false;
     }
-    validar_email(email);
-    validar_dni(dni,mensajeError);
+    if (!validar_email(email)){
+        return false;
+    }
+    if (!validar_dni(dni,mensajeError)){
+        return false;
+    }
     if (telefono === null || telefono === '' || telefono.length != 9){
         alert("Introduzca un n\372mero de tel\351fono de nueve d\355gitos");
         return false;
     }
-    validar_fecha(nacimiento);
+    if (!validar_fecha(nacimiento)){
+        return false;
+    }
     if (password === null || password === ''){
         alert('Introduzca su contrase\361a');
         return false;
@@ -45,6 +51,7 @@ function validar_email(email){
         alert("Formato del email incorrecto");
         return false;
     }
+    return true;
 }
 function validar_dni(dni){
     var num;
@@ -67,6 +74,7 @@ function validar_dni(dni){
         alert("Formato del DNI debe de ser el n\372mero y un gui\363n seguido de la letra")
         return false;
     }
+    return true;
 }
 function validar_fecha(fecha){
     var partes_fecha = fecha.split("-");
@@ -85,6 +93,7 @@ function validar_fecha(fecha){
             return false;
         }
     }
+    return true;
 }
 
 function redireccion(){
