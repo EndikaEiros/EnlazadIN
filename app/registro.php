@@ -1,12 +1,17 @@
 <?php
 require("db_con.php");
-$nombre= $_POST["nombre"]; 
-$apellidos= $_POST["apellidos"]; 
-$email= $_POST["email"]; 
-$dni= (int) $_POST["dni"]; 
-$tel= (int)$_POST["telefono"]; 
-$fnac= $_POST["nacimiento"]; 
-$con= $_POST["password"]; 
+$nombre= $_GET["nombre"]; 
+$apellidos= $_GET["apellidos"]; 
+$email= $_GET["email"]; 
+$dniLetra= $_GET["dni"]; 
+$tel= (int)$_GET["telefono"]; 
+$fnac= $_GET["nacimiento"]; 
+$con= $_GET["password"]; 
+
+list($dia,$mes,$ano) = explode("-", $fnac);
+$fnac= $ano."/".$mes."/".$dia;
+
+list($dni, $letra)= explode("-", $dniLetra);
 
 echo "test"."<br>";
 echo $nombre."<br>"; 
@@ -19,7 +24,6 @@ echo $con."<br>"."<br>";
 
 echo "fin TEST"."<br>"."<br>"; 
 
-$mysqli = new mysqli($hostname,$username,$password,$db);
 $sql = "INSERT INTO usuarios VALUES ('$nombre','$apellidos','$email',$dni,$tel,'$fnac','$con')";
   
 if ($mysqli->query($sql)) {

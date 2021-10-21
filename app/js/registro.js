@@ -12,31 +12,38 @@ function comprobar_datos(){
     var mensajeError = [];
     if (nombre === null || nombre === ''){
         alert("Introduzca su nombre");
+        return false;
     }
     else if (!regex_nombre.test(nombre)){
         alert("Solo se pueden introducir letras")
+        return false;
     }
     if (apellidos === null || apellidos === ''){
         alert("Introduzca sus apellidos");
+        return false;
     }
     else if (!regex_nombre.test(apellidos)){
         alert("Solo se pueden introducir letras")
+        return false;
     }
     validar_email(email);
     validar_dni(dni,mensajeError);
     if (telefono === null || telefono === '' || telefono.length != 9){
         alert("Introduzca un n\372mero de tel\351fono de nueve d\355gitos");
+        return false;
     }
     validar_fecha(nacimiento);
     if (password === null || password === ''){
         alert('Introduzca su contrase\361a');
+        return false;
     }
-    return false;
+    return true;
 }
 function validar_email(email){
     var regex_email = /\S+@\S+\.\S+/;
     if (!regex_email.test(email)){
         alert("Formato del email incorrecto");
+        return false;
     }
 }
 function validar_dni(dni){
@@ -53,16 +60,19 @@ function validar_dni(dni){
         comprobacion = comprobacion.substring(numero,numero+1);
         if (letra != comprobacion.toUpperCase()) {
             alert("DNI incorrecto")
+            return false;
         }
     }
     else{
         alert("Formato del DNI debe de ser el n\372mero y un gui\363n seguido de la letra")
+        return false;
     }
 }
 function validar_fecha(fecha){
     var partes_fecha = fecha.split("-");
     if (partes_fecha.length != 3){
         alert("La fecha tiene que seguir el formato 'dd-mm-aaaa'");
+        return false;
     }
     else{
         var dia = partes_fecha[0];
@@ -72,6 +82,19 @@ function validar_fecha(fecha){
         var comprobar_anio = /^\d{4}$/;
         if(!comprobar_dia_mes.test(dia) || !comprobar_dia_mes.test(mes) || !comprobar_anio.test(anio)){
             alert("La fecha tiene que seguir el formato 'dd-mm-aaaa");
+            return false;
         }
     }
+}
+
+function redireccion(){
+    if (comprobar_datos()){
+  
+        nuevapag=window.location.href.replace("html","php");
+        nuevapag=`${nuevapag}?nombre=${document.registrarse.nombre.value}&apellidos=${document.registrarse.apellidos.value}&email=${document.registrarse.email.value}&dni=${document.registrarse.dni.value}&telefono=${document.registrarse.telefono.value}&nacimiento=${document.registrarse.nacimiento.value}&password=${document.registrarse.password.value}`
+
+        window.location = nuevapag;
+
+    }
+   
 }
