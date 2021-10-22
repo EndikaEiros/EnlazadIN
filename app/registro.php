@@ -24,7 +24,7 @@ echo $con."<br>"."<br>";
 
 echo "fin TEST"."<br>"."<br>"; 
 
-$sql = "INSERT INTO usuarios VALUES ('$nombre','$apellidos','$email',$dni,$tel,'$fnac','$con')";
+$sql = "INSERT INTO usuarios VALUES ('$nombre','$apellidos','$email',$dni,$tel,'$fnac','$con');";
   
 if ($mysqli->query($sql)) {
     printf("Se ha añadido correctamente.<br />");
