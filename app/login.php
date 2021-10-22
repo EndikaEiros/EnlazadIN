@@ -5,7 +5,7 @@
 
   $sql = "SELECT Contrasena FROM usuarios WHERE Email=?; ";
   $test= $conn->prepare($sql);
-  $test->bind_param("s", $emailF);
+  $test->bind_param("s", $emailF); #s de string
   
   if( $emailF== ""){
     echo '<script> window.location.href="/login.html"</script>';
