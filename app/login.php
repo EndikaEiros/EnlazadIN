@@ -3,35 +3,31 @@
   $emailF= $_GET["email"]; 
   $passF= $_GET["password"];
 
-  echo "Enviado :"."<br>";
-  echo "$emailF"."<br>";
-  echo "$passF"."<br>";
-
   $sql = "SELECT Contrasena FROM usuarios WHERE Email=?; ";
   $test= $conn->prepare($sql);
   $test->bind_param("s", $emailF);
   
+  if( $emailF== ""){
+    echo '<script> window.location.href="/login.html"</script>';
+  }
   if ($test->execute()) {
     $result = $test->get_result();
     $contrasena = $result->fetch_assoc();
-    echo $contrasena['Contrasena']."<br>";
-
 
     if ( strcmp($contrasena['Contrasena'],$passF) ==0 ){
-        echo 'contraseña correcto'."<br>";
-        redirect('http://localhost:81/perfil.html');
+        echo '<script> window.location.href="/perfil.html"</script>';
 
     }else{
-        echo "sale mal";
+      echo '<script> window.location.href="/login.html"</script>';
+
     } 
+  }else{
+    echo '<script> window.location.href="/login.html"</script>';
+    
   }
 ?>
 
 <?php
-function redirect($url)
-{
-    header('Location: '.$url);
-    exit();
-}
+
 ?>
 ;
