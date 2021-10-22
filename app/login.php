@@ -15,7 +15,9 @@
     $contrasena = $result->fetch_assoc();
 
     if ( strcmp($contrasena['Contrasena'],$passF) ==0 ){
-        echo '<script> window.location.href="/perfil.html"</script>';
+      session_start();
+      $_SESSION['email']  = $emailF;
+      echo '<script> window.location.href="/perfil.php"</script>';
 
     }else{
       echo '<script> window.location.href="/login.html"</script>';
