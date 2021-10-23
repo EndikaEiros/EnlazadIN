@@ -58,7 +58,7 @@ session_start();
                     Teléfono: <input type='text' name='telefono' value={$Telefono}><br>
                     Fecha de nacimiento: <input type='text' name='nacimiento' value={$Fecha_nacimiento}><br>
                     Introducir contraseña: <input type='text' name='password' value={$Contrasena}><br>
-                    <input type='button' name='Cambiardatos' class='button' value='Cambiar Datos' />
+                    <input type='submit' name='Cambiardatos' class='button' value='Cambiar Datos' />
                 </form>
             </main>
             <div id='imagen'>
