@@ -11,19 +11,6 @@ $con= $_GET["password"];
 list($dia,$mes,$ano) = explode("-", $fnac);
 $fnac= $ano."/".$mes."/".$dia;
 
-list($dni, $letra)= explode("-", $dniLetra);
-
-echo "test"."<br>";
-echo $nombre."<br>"; 
-echo $apellidos."<br>"; 
-echo $email."<br>"; 
-echo $dni."<br>"; 
-echo $tel."<br>"; 
-echo $fnac."<br>"; 
-echo $con."<br>"."<br>"; 
-
-echo "fin TEST"."<br>"."<br>"; 
-
 $sql = "INSERT INTO usuarios VALUES ('$nombre','$apellidos','$email',$dni,$tel,'$fnac','$con');";
   
 if ($mysqli->query($sql)) {

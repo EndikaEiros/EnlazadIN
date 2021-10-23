@@ -19,7 +19,11 @@ require("db_con.php");
         $Email =$usuario['Email']; 
         $DNI =$usuario['DNI']; 
         $Telefono =$usuario['Telefono']; 
+        
         $Fecha_nacimiento =$usuario['Fecha_nacimiento']; 
+        list($ano,$mes,$dia) = explode("/", $Fecha_nacimiento);
+        $Fecha_nacimiento= $dia."-".$mes."-".$ano;
+        
         $Contrasena =$usuario['Contrasena'];
     }
 
@@ -72,12 +76,17 @@ require("db_con.php");
 
 
     if(array_key_exists('Cambiardatos', $_POST)) {
+        
         $nom=$_POST['nombre'];
         $ape=$_POST['apellidos'];
         $mail=$_POST['email'];
         $dni=$_POST['dni'];
         $telf=$_POST['telefono'];
-        $nac=$_POST['nacimiento'];
+        
+        $fnac=$_POST['nacimiento'];
+        list($dia,$mes,$ano) = explode("-", $fnac);
+        $fnac= $ano."/".$mes."/".$dia;
+        
         $pasw=$_POST['password'];
 
         $sql = "UPDATE usuarios SET Nombre = '$nom',
@@ -85,13 +94,10 @@ require("db_con.php");
                                     Email = '$mail',
                                     DNI = '$dni',
                                     Telefono = '$telf',
-                                    Fecha_nacimiento = '$nac',
+                                    Fecha_nacimiento = '$fnac',
                                     Contrasena = '$pasw'
-                                                     WHERE Email LIKE '$email';";
+                                                        WHERE Email LIKE '$email';";
 
-        #$test= $conn->prepare($sql);
-        #$test->execute();
-        #mysqli_query($conn, $sql)or die (mysqli_error($conn));
         if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";
             $_SESSION['email'] = $mail;
