@@ -20,7 +20,7 @@ session_start();
 
     if ( strcmp($contrasena['Contrasena'],$passF) ==0 ){
       $_SESSION['email']  = $emailF;
-      echo '<script> window.location.href="/perfil.php"</script>';
+      echo '<script> window.location.href="/iniciado.html"</script>';
 
     }else{
       echo '<script> window.location.href="/login.html"</script>';
