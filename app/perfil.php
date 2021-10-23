@@ -1,9 +1,9 @@
 <?php
 require("db_con.php");
-session_start();
 ?>
 <?php
     require("db_con.php");
+    session_start();
     $email= $_SESSION['email'];
 
     $sql = "SELECT * FROM usuarios WHERE Email=?";
@@ -72,14 +72,29 @@ session_start();
 
 
     if(array_key_exists('Cambiardatos', $_POST)) {
-        $a=$_POST['nombre'];
-        $sql = "UPDATE usuarios SET Nombre = '$a' WHERE Email LIKE '$email';";
-        echo $sql;
+        $nom=$_POST['nombre'];
+        $ape=$_POST['apellidos'];
+        $mail=$_POST['email'];
+        $dni=$_POST['dni'];
+        $telf=$_POST['telefono'];
+        $nac=$_POST['nacimiento'];
+        $pasw=$_POST['password'];
+
+        $sql = "UPDATE usuarios SET Nombre = '$nom',
+                                    Apellidos = '$ape',
+                                    Email = '$mail',
+                                    DNI = '$dni',
+                                    Telefono = '$telf',
+                                    Fecha_nacimiento = '$nac',
+                                    Contrasena = '$pasw'
+                                                     WHERE Email LIKE '$email';";
+
         #$test= $conn->prepare($sql);
         #$test->execute();
         #mysqli_query($conn, $sql)or die (mysqli_error($conn));
         if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";
+            $_SESSION['email'] = $mail;
             echo '<script> window.location.href="/perfil.php"</script>';
         }else {
             echo "Error updating record: " . $conn->error;
