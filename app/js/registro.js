@@ -9,7 +9,6 @@ function comprobar_datos(){
     var regex_nombre = /^[A-Za-z\s]+$/;
     console.log("Enviando formulario...");
 
-    var mensajeError = [];
     if (nombre === null || nombre === ''){
         alert("Introduzca su nombre");
         return false;
