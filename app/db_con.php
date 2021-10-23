@@ -9,8 +9,8 @@
 #    echo $conn->error;
 #  }
   
-  $datos = mysqli_query($conn, 'SELECT * FROM usuarios ORDER BY DNI;')
-   or die (mysqli_error($conn));
+  $datos = mysqli_query($conn, 'SELECT * FROM usuarios ORDER BY DNI;')or die (mysqli_error($conn));
+  $foro = mysqli_query($conn, 'SELECT * FROM comentarios ORDER BY RAND() LIMIT 5;')or die (mysqli_error($conn));
 
   #mysqli_close($conn);
 ?>
