@@ -41,7 +41,7 @@ main{
 main form{
     font-size: 25px;
     width: 80%;
-    margin: 5% 0%;
+    margin: 2% 0%;
     padding: 0px 0px;
     text-align: right;
 }
@@ -64,7 +64,7 @@ input[type="text"]{
     cursor: pointer;
     font-size: 24px;
     padding: 20px 25px;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 .button:hover{
     background-color: thistle;
