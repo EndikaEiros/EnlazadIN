@@ -1,5 +1,5 @@
 <?php
- require("db_con.php");
+ require("db_con.php"); # se conecta con la bd 
  echo
  "
  <!DOCTYPE html>
@@ -25,7 +25,7 @@
             </ul>
         </header>
       <body>";
-
+# secuencia en la que imprime 
  foreach($foro as $comentario) :
   $ID = $comentario['ID'];
 

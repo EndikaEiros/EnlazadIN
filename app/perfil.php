@@ -1,30 +1,30 @@
 <?php
-    require("db_con.php");
+    require("db_con.php");  # se conecta con la base de datos 
     session_start();
-    $email= $_SESSION['email'];
+    $email= $_SESSION['email']; # se guarda en la variable local email la variable global en la que hemos almacenado el email
 
-    $sql = "SELECT * FROM usuarios WHERE Email=?";
-    $test= $conn->prepare($sql);
+    $sql = "SELECT * FROM usuarios WHERE Email=?"; # consulta sql
+    $test= $conn->prepare($sql); # prepara la seduencia sql
     $test->bind_param('s', $email); #s de string
 
-    if ($test->execute()) {
+    if ($test->execute()) { # ejecuta la consulta sql 
         $result = $test->get_result();
         $usuario = $result->fetch_assoc();
 
-        $Nombre= $usuario['Nombre'];
+        $Nombre= $usuario['Nombre']; # se guardan los valores de la BD en las variables locales 
         $Apellidos= $usuario['Apellidos']; 
         $Email =$usuario['Email']; 
         $DNI =$usuario['DNI']; 
         $Telefono =$usuario['Telefono']; 
         
-        $Fecha_nacimiento =$usuario['Fecha_nacimiento']; 
+        $Fecha_nacimiento =$usuario['Fecha_nacimiento'];  # se modifica como se muestra la fecha 
         list($ano,$mes,$dia) = explode("/", $Fecha_nacimiento);
         $Fecha_nacimiento= $dia."-".$mes."-".$ano;
         
         $Contrasena =$usuario['Contrasena'];
     }
-   
-    echo 
+   #html con la estructura de las paginas
+    echo  
     "<!DOCTYPE html>
     <html lang='es'>
         <head>
@@ -75,9 +75,9 @@
         </body>
     </html>";
     
-    if(array_key_exists('Cambiardatos', $_POST)) {
+    if(array_key_exists('Cambiardatos', $_POST)) { # detecta el momento en que el boton se pulsa
         
-        $nom=$_POST['nombre'];
+        $nom=$_POST['nombre']; # se guardan los valores del formulario en las variables lcoales a traves de un metodo post 
         $ape=$_POST['apellidos'];
         $mail=$_POST['email'];
         $dni=$_POST['dni'];
@@ -88,6 +88,7 @@
         $fnac= $ano."/".$mes."/".$dia;
         
         $pasw=$_POST['password'];
+# consulta sql 
 
         $sql = "UPDATE usuarios SET Nombre = '$nom',
                                     Apellidos = '$ape',
@@ -98,12 +99,12 @@
                                     Contrasena = '$pasw'
                                                         WHERE Email LIKE '$email';";
 
-        if (mysqli_query($conn, $sql)) {
-            printf ("Record updated successfully");
-            $_SESSION['email'] = $mail;
-            echo '<script> window.location.href="/perfil.php"</script>';
+        if (mysqli_query($conn, $sql)) {# se ejecuta la consulta sql 
+            printf ("Record updated successfully");# imprime en la terminal del buscador que ha salido bien 
+            $_SESSION['email'] = $mail;  # guarda en la variable glogal el email para mantener la sesion inicada 
+            echo '<script> window.location.href="/perfil.php"</script>'; # redirecciona al perfiñ
         }else {
-            printf ("Error updating record: " . $conn->error);
+            printf ("Error updating record: " . $conn->error); # algo ha salido mal y se imprime en la terminal del buscador 
           }
         }
 ?>

@@ -1,15 +1,13 @@
 <?php
     require("db_con.php");
-    session_start();   
-    $_SESSION['id']=$id ;
-    
+
     $id= $_GET["id"];
     
-    $sql = "SELECT * FROM comentarios WHERE ID=?";
+    $sql = "SELECT * FROM comentarios WHERE ID=?"; # se crea la consulta
     $test= $conn->prepare($sql);
-    $test->bind_param('i', $id); #i de int
+    $test->bind_param('i', $id); #i de int y se aoscia la variable id a un integer dentro de una sentencia 
 
-    if ($test->execute()) {
+    if ($test->execute()) { # se ejecuta la consulta 
         $result = $test->get_result();
         $com = $result->fetch_assoc();
 
@@ -20,6 +18,7 @@
         $Mensaje =$com['MSG']; 
     }
    
+    #html dentro de php con la estructura de las paginas anteriores  
     echo 
     "<!DOCTYPE html>
     <html lang='es'>
@@ -70,14 +69,17 @@
         </body>
     </html>";
     
-    if(array_key_exists('modificar', $_POST)) {
+    if(array_key_exists('modificar', $_POST)) {  # html dentro de php con la estructura de las paginas anteriores  
 
+        # se obtienenn las variables a traves d eun metoo post 
     $id= (int)$_POST['id'];
     $nom=$_POST['nombre'];
     $ape=$_POST['apellidos'];
     $mail=$_POST['email'];
     $telf=$_POST['telefono'];
     $mensaje=$_POST['mensaje'];
+
+     #se crea la consulta de sql
 
     $sql = "UPDATE comentarios SET NRECEP= '$nom',
                                     ARECEP= '$ape',
@@ -86,12 +88,12 @@
                                     MSG= '$mensaje'
                                     WHERE ID= $id ;";
 
-    #$sql = "UPDATE comentarios SET NRECEP= 'test1', ARECEP= 'test1', ERECEP= 'test1@gmail.com', Telefono= 429182866, MSG= 'ey que pasa tio' WHERE ID= 0;";
+    #se jecuta la consulta 
     if (mysqli_query($conn, $sql)) {
-        printf ("Record updated successfully");
-        echo "<script> window.location.href='/modificarmensaje.php/?id=${id}'</script>";
+        printf ("Record updated successfully"); # dice por la terminal que ha salido bien 
+        echo "<script> window.location.href='/modificarmensaje.php/?id=${id}'</script>"; # recarga la pagina para que se sactalizen los valores 
     }else {
-        printf ("Error updating record: " . $conn->error);
+        printf ("Error updating record: " . $conn->error); # si hay un error lo dice por la terminal
     }
 }
 ?>
