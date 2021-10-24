@@ -15,7 +15,7 @@ CREATE TABLE comentarios (
   NRECEP varchar(20) NOT NULL,
   ARECEP varchar(20) NOT NULL,
   ERECEP varchar(40) NOT NULL,
-  Telefono int(8) NOT NULL,
+  Telefono int(9) NOT NULL,
   MSG varchar(8000) NOT NULL,
   EMISOR varchar(40) NOT NULL
 );

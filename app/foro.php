@@ -50,7 +50,7 @@
 endforeach;
 echo
 "
-      <script src='js/modificar-mensaje.js'></script> <!-- Esta etiqueta hace referencia al script que valida los datos del formulario antes de mandarlos. -->
+      <script src='js/modificarmensaje.js'></script> <!-- Esta etiqueta hace referencia al script que valida los datos del formulario antes de mandarlos. -->
   </body>
 </html>
 ";

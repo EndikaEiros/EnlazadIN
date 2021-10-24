@@ -1,5 +1,5 @@
 function redireccion(id){
-    nuevapag='modificar-mensaje.php';
+    nuevapag='modificarmensaje.php';
     nuevapag=`${nuevapag}/?id=${id}`
     window.location = nuevapag;
 }
