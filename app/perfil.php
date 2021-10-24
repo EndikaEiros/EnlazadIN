@@ -99,11 +99,11 @@
                                                         WHERE Email LIKE '$email';";
 
         if (mysqli_query($conn, $sql)) {
-            echo "Record updated successfully";
+            printf ("Record updated successfully");
             $_SESSION['email'] = $mail;
             echo '<script> window.location.href="/perfil.php"</script>';
         }else {
-            echo "Error updating record: " . $conn->error;
+            printf ("Error updating record: " . $conn->error);
           }
         }
 ?>

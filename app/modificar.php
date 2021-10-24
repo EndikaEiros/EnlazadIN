@@ -16,9 +16,9 @@
                                     WHERE ID = $id;";
     
     if (mysqli_query($conn, $sql)) {
-        echo "Record updated successfully";
+        printf ("Record updated successfully");
         echo "<script> window.location.href='/modificarmensaje.php/?id=${id}'</script>";
     }else {
-        echo "Error updating record: " . $conn->error;
+        printf ("Error updating record: " . $conn->error);
     }
 ?>

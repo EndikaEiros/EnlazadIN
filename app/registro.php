@@ -17,7 +17,6 @@ $sql = "INSERT INTO usuarios VALUES ('$nombre','$apellidos','$email','$dniLetra'
   
 if ($mysqli->query($sql)) {
     printf("Se ha añadido correctamente.<br />");
-    echo "Se ha añadido correctamente.<br />"; 
 } 
 else{
     printf("Error inesperado al añadir usuario: %s<br />", $mysqli->error);
