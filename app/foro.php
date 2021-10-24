@@ -41,10 +41,7 @@
           <div id={$ID}>
             <p>{$ERECEP}</p>
             <p>{$MSG}</p>
-                <form action=''>
-                   <button id='modificar' class='button'>Modificar mensaje</button> <!-- Botón que lleva a modificar el mensaje. -->
-                </form>
-                <form action=''>
+            <button id='modificar' onclick='return redireccion({$ID})' class='button'>Modificar mensaje</button> <!-- Botón que lleva a modificar el mensaje. -->
                    <button id='eliminar' class='button'>Eliminar mensaje</button> <!-- Botón que elimina el mensaje. -->
                 </form>
             </div>
@@ -52,6 +49,7 @@
 endforeach;
 echo
 "
+      <script src='js/modificar-mensaje.js'></script> <!-- Esta etiqueta hace referencia al script que valida los datos del formulario antes de mandarlos. -->
   </body>
 </html>
 ";
