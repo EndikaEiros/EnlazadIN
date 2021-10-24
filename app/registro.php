@@ -1,5 +1,7 @@
 <?php
 require("db_con.php");
+session_start();
+
 $nombre= $_GET["nombre"]; 
 $apellidos= $_GET["apellidos"]; 
 $email= $_GET["email"]; 
@@ -20,7 +22,7 @@ if ($mysqli->query($sql)) {
 else{
     printf("Error inesperado al añadir usuario: %s<br />", $mysqli->error);
 }
-require('admin.php');
-
+$_SESSION['email'] = $email;
+echo '<script> window.location.href="/iniciado.html"</script>';
 
 ?>
