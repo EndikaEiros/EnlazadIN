@@ -1,6 +1,33 @@
 <?php
  require("db_con.php");
- 
+ echo
+ "
+ <!DOCTYPE html>
+    <html lang='es'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>EnlazadIn perfil</title>
+            <link rel='shortcut icon' href='img/briefcase.png' type='image/x-icon'> <!-- Selecciona el ícono que aparece en la pestaña del navegador. -->
+            <link rel='stylesheet' href='../css/perfil.css'>
+        </head>
+        <header>
+            <div id='menu'>
+                <ul>
+                    <li id='logo'>
+                        <a href='index.html'>
+                            <img src='img/briefcase.png' width='50'>
+                        </a>
+                    </li>
+                    <li id='nombre-pagina'>
+                        <h1>EnlazadIN</h1>
+                    </li>
+                </ul>
+            </div>
+        </header>
+      <body>  
+ ";
  foreach($foro as $comentario) :
   $ID = $comentario['ID'];
 
@@ -10,30 +37,23 @@
   $Telefono = $comentario['Telefono'];
   $MSG = $comentario['MSG'];
     echo
-    "<!DOCTYPE html>
-    <html lang='es'>
-    <body>
-      <table>
-        
-              <main>
-                  <form name='datos' method='post'>
-                      <h1>Cambio de datos de comentarop</h1>
-                      ID: <input type='text' name='ID' value={$ID}><br>
-                      NRECEP: <input type='text' name='NRECEP' value={$NRECEP}><br>
-                      ARECEP: <input type='text' name='ARECEP' value={$ARECEP}><br>
-                      ERECEP: <input type='text' name='ERECEP' value={$ERECEP}><br>
-                      Telefono: <input type='text' name='Telefono' value={$Telefono}><br>
-                      MSG: <input type='text' name='MSG' value={$MSG}><br>
-                      <input type='submit' name='Cambiardatos' class='button' value='Cambiar Datos' />
-                  </form>
-                  <form action='iniciado.html'>
-                      <button id='volver' class='button'>Volver</button> <!-- Botón que vuelve atras. -->
-                  </form>
-              </main>
-
-        </table>
-      </body>
-    </html>";
+    "
+          <div id={$ID}>
+            <p>{$ERECEP}</p>
+            <p>{$MSG}</p>
+                <form action=''>
+                   <button id='modificar' class='button'>Modificar mensaje</button> <!-- Botón que lleva a modificar el mensaje. -->
+                </form>
+                <form action=''>
+                   <button id='eliminar' class='button'>Eliminar mensaje</button> <!-- Botón que elimina el mensaje. -->
+                </form>
+            </div>
+      ";
 endforeach;
+echo
+"
+  </body>
+</html>
+";
 
 ?>
