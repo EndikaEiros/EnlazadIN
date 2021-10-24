@@ -11,13 +11,13 @@
 
     if ($test->execute()) {
         $result = $test->get_result();
-        $usuario = $result->fetch_assoc();
+        $com = $result->fetch_assoc();
 
-        $NombreR= $usuario['NRECEP'];
-        $ApellidosR= $usuario['ARECEP']; 
-        $EmailR =$usuario['ERECEP']; 
-        $TelefonoR =$usuario['Telefono']; 
-        $Mensaje =$usuario['MSG']; 
+        $NombreR= $com['NRECEP'];
+        $ApellidosR= $com['ARECEP']; 
+        $EmailR =$com['ERECEP']; 
+        $TelefonoR =$com['Telefono']; 
+        $Mensaje =$com['MSG']; 
     }
    
     echo 
@@ -28,15 +28,15 @@
             <meta http-equiv='X-UA-Compatible' content='IE=edge'>
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
             <title>EnlazadIn perfil</title>
-            <link rel='shortcut icon' href='img/briefcase.png' type='image/x-icon'> <!-- Selecciona el ícono que aparece en la pestaña del navegador. -->
-            <link rel='stylesheet' href='../css/perfil.css'>
+            <link rel='shortcut icon' href='/img/briefcase.png' type='image/x-icon'> <!-- Selecciona el ícono que aparece en la pestaña del navegador. -->
+            <link rel='stylesheet' href='/css/perfil.css'>
         </head>
         <header>
             <div id='menu'>
                 <ul>
                     <li id='logo'>
-                        <a href='index.html'>
-                            <img src='img/briefcase.png' width='50'>
+                        <a href='/index.html'>
+                            <img src='/img/briefcase.png' width='50'>
                         </a>
                     </li>
                     <li id='nombre-pagina'>
@@ -57,7 +57,7 @@
                     
                     <input type='submit' name='modificar' class='button' value='Modificar' />
                 </form>
-                <form action='foro.php'>
+                <form action='/foro.php'>
                     <button id='volver' class='button'>Volver</button> <!-- Botón que vuelve atras. -->
                 </form>
             </main>
@@ -71,22 +71,22 @@
     </html>";
     
     if(array_key_exists('modificar', $_POST)) {
-        
-        require("db_con.php");
 
-    $id=$_GET['id'];
-    $nom=$_GET['nombre'];
-    $ape=$_GET['apellidos'];
-    $mail=$_GET['email'];
-    $telf=$_GET['telefono'];
-    $mensaje=$_GET['mensaje'];
+    $id= (int)$_POST['id'];
+    $nom=$_POST['nombre'];
+    $ape=$_POST['apellidos'];
+    $mail=$_POST['email'];
+    $telf=$_POST['telefono'];
+    $mensaje=$_POST['mensaje'];
 
-    $sql = "UPDATE comentarios SET NRECEP = '$nom',
-                                    ARECEP = '$ape',
-                                    ERECEP = '$mail',
-                                    Telefono = $telf,
-                                    MSG = '$mensaje'
-                                    WHERE ID = $id ;";
+    $sql = "UPDATE comentarios SET NRECEP= '$nom',
+                                    ARECEP= '$ape',
+                                    ERECEP= '$mail',
+                                    Telefono= $telf,
+                                    MSG= '$mensaje'
+                                    WHERE ID= $id ;";
+
+    #$sql = "UPDATE comentarios SET NRECEP= 'test1', ARECEP= 'test1', ERECEP= 'test1@gmail.com', Telefono= 429182866, MSG= 'ey que pasa tio' WHERE ID= 0;";
     if (mysqli_query($conn, $sql)) {
         echo "Record updated successfully";
         echo "<script> window.location.href='/modificarmensaje.php/?id=${id}'</script>";

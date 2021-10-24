@@ -33,7 +33,7 @@
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
             <title>EnlazadIn perfil</title>
             <link rel='shortcut icon' href='img/briefcase.png' type='image/x-icon'> <!-- Selecciona el ícono que aparece en la pestaña del navegador. -->
-            <link rel='stylesheet' href='../css/perfil.css'>
+            <link rel='stylesheet' href='./css/perfil.css'>
         </head>
         <header>
             <div id='menu'>
