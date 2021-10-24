@@ -26,7 +26,7 @@ function comprobar_datos(){
     if (!validar_email(email)){
         return false;
     }
-    if (telefono === null || telefono === '' || telefono.length != 9){
+    if (telefono === null || telefono === '' || telefono.length != 9 || typeof telefono != 'number'){
         alert("Introduzca un n\372mero de tel\351fono de nueve d\355gitos");
         return false;
     }
