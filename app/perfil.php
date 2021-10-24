@@ -1,8 +1,4 @@
 <?php
-require("db_con.php");
-?>
-
-<?php
     require("db_con.php");
     session_start();
     $email= $_SESSION['email'];

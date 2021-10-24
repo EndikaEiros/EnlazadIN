@@ -1,9 +1,8 @@
 <?php
-require("db_con.php");
-session_start();
-?>
+  require("db_con.php");
+   session_start();
 
-<?php
+
   $emailF= $_GET["email"]; 
   $passF= $_GET["password"];
 
@@ -19,8 +18,10 @@ session_start();
     $contrasena = $result->fetch_assoc();
 
     if ( strcmp($contrasena['Contrasena'],$passF) ==0 ){
+     
       $_SESSION['email']  = $emailF;
       echo '<script> window.location.href="/iniciado.html"</script>';
+      #echo "<script> window.location.href='/iniciado.html?email=${emailF}'</script>";
 
     }else{
       echo '<script> window.location.href="/login.html"</script>';

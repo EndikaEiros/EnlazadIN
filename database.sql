@@ -4,7 +4,7 @@ CREATE TABLE usuarios (
   Apellidos varchar(20) NOT NULL,
   Email varchar(40) PRIMARY KEY,
   DNI varchar(10) UNIQUE,
-  Telefono int(8) UNIQUE,
+  Telefono int(9) UNIQUE,
   Fecha_nacimiento varchar(10) NOT NULL,
   Contrasena varchar(20) NOT NULL
 

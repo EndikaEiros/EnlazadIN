@@ -11,7 +11,7 @@ $con= $_GET["password"];
 list($dia,$mes,$ano) = explode("-", $fnac);
 $fnac= $ano."/".$mes."/".$dia;
 
-$sql = "INSERT INTO usuarios VALUES ('$nombre','$apellidos','$email',$dni,$tel,'$fnac','$con');";
+$sql = "INSERT INTO usuarios VALUES ('$nombre','$apellidos','$email','$dniLetra',$tel,'$fnac','$con')";
   
 if ($mysqli->query($sql)) {
     printf("Se ha añadido correctamente.<br />");
