@@ -10,21 +10,19 @@
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
             <title>EnlazadIn perfil</title>
             <link rel='shortcut icon' href='img/briefcase.png' type='image/x-icon'> <!-- Selecciona el ícono que aparece en la pestaña del navegador. -->
-            <link rel='stylesheet' href='./css/perfil.css'>
+            <link rel='stylesheet' href='./css/foro.css'>
         </head>
         <header>
-            <div id='menu'>
-                <ul>
-                    <li id='logo'>
-                        <a href='index.html'>
-                            <img src='img/briefcase.png' width='50'>
-                        </a>
-                    </li>
-                    <li id='nombre-pagina'>
-                        <h1>EnlazadIN</h1>
-                    </li>
-                </ul>
-            </div>
+            <ul>
+                <li id='logo'>
+                    <a href='index.html'>
+                        <img src='img/briefcase.png' width='50'>
+                    </a>
+                </li>
+                <li id='nombre-pagina'>
+                    <h1>EnlazadIN</h1>
+                </li>
+            </ul>
         </header>
       <body>";
 

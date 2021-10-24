@@ -16,8 +16,6 @@ $emisor=$_SESSION['email'];
 $sql = "INSERT INTO comentarios VALUES ($newid,'$nrecep','$arecep','$erecep',$telf,'$msg','$emisor');";
   
 if ($mysqli->query($sql)) {
-    printf("Se ha añadido correctamente.<br />");
-    echo "Se ha añadido correctamente.<br />"; 
 } 
 else{
     printf("Error inesperado al añadir : %s<br />", $mysqli->error);
