@@ -5,7 +5,6 @@ session_start();
 $maxid = mysqli_fetch_array($id);
 $newid = $maxid[0] +1 ;
 
-
 $nrecep= $_GET["nombre"]; 
 $arecep= $_GET["apellidos"]; 
 $erecep= $_GET["email"]; 
