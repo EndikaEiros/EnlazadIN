@@ -26,8 +26,8 @@
                 </ul>
             </div>
         </header>
-      <body>  
- ";
+      <body>";
+
  foreach($foro as $comentario) :
   $ID = $comentario['ID'];
 
@@ -54,5 +54,28 @@ echo
   </body>
 </html>
 ";
+
+function borrarmsg($ID){
+
+
+   
+
+    require("db_con.php");
+    
+    $sql = "DELETE FROM comentarios WHERE ID = {$ID}";
+  
+    if ($mysqli->query($sql)) {
+        printf("Se ha borrado correctamente.<br />");
+        echo "Se ha borrado correctamente.<br />"; 
+    } 
+    else{
+        printf("Error inesperado al borrar : %s<br />", $mysqli->error);
+    }
+
+}
+
+
+
+
 
 ?>

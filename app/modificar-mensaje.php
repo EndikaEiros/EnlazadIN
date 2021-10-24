@@ -1,7 +1,9 @@
 <?php
     require("db_con.php");
     session_start();   
+    $_SESSION['email']= $_GET["id"];
     $id= $_GET["id"];
+    
     $sql = "SELECT * FROM comentarios WHERE ID=?";
     $test= $conn->prepare($sql);
     $test->bind_param('i', $id); #i de int
@@ -32,8 +34,8 @@
             <div id='menu'>
                 <ul>
                     <li id='logo'>
-                        <a href='index.html'>
-                            <img src='img/briefcase.png' width='50'>
+                        <a href='/index.html'>
+                            <img src='/img/briefcase.png' width='50'>
                         </a>
                     </li>
                     <li id='nombre-pagina'>
@@ -42,26 +44,27 @@
                 </ul>
             </div>
         </header>
-        <body>
+        
+       
             <main>
-                <form name='mensaje'>
+                <form name='mensaje' method='post'>
                     <h1>Cambio de datos</h1>
                     Nombre: <input type='text' name='nombre' value={$NombreR}><br>
                     Apellidos: <input type='text' name='apellidos' value={$ApellidosR}><br>
                     Email: <input type='text' name='email' value={$EmailR}><br>
                     Telefono: <input type='text' name='telefono' value={$TelefonoR}><br>
                     Mensaje: <textarea name='mensaje' rows='6' cols='35'>{$Mensaje}</textarea><br>
-                    <button id='modificar' onclick='modificar({$ID})' class='button'>Modificar mensaje</button> <!-- Botón que lleva a modificar el mensaje. -->
+                    <input type='button' onclick = 'return modificar(0)' value='Modificar'><br> <!-- Botón que lleva a modificar el mensaje. -->
                 </form>
-                <form action='foro.php'>
-                    <button id='volver' class='button'>Volver</button> <!-- Botón que vuelve atras. -->
+                <form action='/foro.php'>
+                    <button type= 'submit' id='volver' class='button'>Volver</button> <!-- Botón que vuelve atras. -->
                 </form>
             </main>
             <div id='imagen'>
                 <img src=''>
             </div>
             <footer>
-                Icons made by <a href='' title='juicy_fish'>juicy_fish</a> from <a href='https://www.flaticon.com/' title='Flaticon'>www.flaticon.com</a>
+                    Icons made by <a href='' title='juicy_fish'>juicy_fish</a> from <a href='https://www.flaticon.com/' title='Flaticon'>www.flaticon.com</a>
             </footer>
             <script src='js/modificar-mensaje.js'></script> <!-- Esta etiqueta hace referencia al script que valida los datos del formulario antes de mandarlos. -->
         </body>
