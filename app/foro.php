@@ -42,9 +42,10 @@
             <p>{$ERECEP}</p>
             <p>{$MSG}</p>
             <button id='modificar' onclick='return redireccion({$ID})' class='button'>Modificar mensaje</button> <!-- Botón que lleva a modificar el mensaje. -->
-                   <button id='eliminar' class='button'>Eliminar mensaje</button> <!-- Botón que elimina el mensaje. -->
-                </form>
-            </div>
+            <form action='confirmar-borrado.html'>
+                <button id='eliminar' class='button'>Eliminar mensaje</button> <!-- Botón que elimina el mensaje. -->
+            </form>
+        </div>
       ";
 endforeach;
 echo
