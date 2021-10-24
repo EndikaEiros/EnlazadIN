@@ -31,7 +31,8 @@
             <meta charset='UTF-8'>
             <meta http-equiv='X-UA-Compatible' content='IE=edge'>
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <title>Document</title>
+            <title>EnlazadIn perfil</title>
+            <link rel='shortcut icon' href='img/briefcase.png' type='image/x-icon'> <!-- Selecciona el ícono que aparece en la pestaña del navegador. -->
             <link rel='stylesheet' href='../css/perfil.css'>
         </head>
         <header>
@@ -60,6 +61,9 @@
                     Fecha de nacimiento: <input type='text' name='nacimiento' value={$Fecha_nacimiento}><br>
                     Introducir contraseña: <input type='text' name='password' value={$Contrasena}><br>
                     <input type='submit' name='Cambiardatos' class='button' value='Cambiar Datos' />
+                </form>
+                <form action='iniciado.html'>
+                    <button id='volver' class='button'>Volver</button> <!-- Botón que vuelve atras. -->
                 </form>
             </main>
             <div id='imagen'>
