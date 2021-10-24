@@ -18,7 +18,7 @@ if ($mysqli->query($sql)) {
     echo "Se ha añadido correctamente.<br />"; 
 } 
 else{
-    printf("Error inesperado al añadir : %s<br />", $mysqli->error);
+    printf("Error inesperado al añadir usuario: %s<br />", $mysqli->error);
 }
 require('admin.php');
 

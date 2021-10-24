@@ -1,6 +1,7 @@
 <?php
 require("db_con.php");
 ?>
+
 <?php
     require("db_con.php");
     session_start();
@@ -26,7 +27,7 @@ require("db_con.php");
         
         $Contrasena =$usuario['Contrasena'];
     }
-
+   
     echo 
     "<!DOCTYPE html>
     <html lang='es'>
@@ -73,8 +74,7 @@ require("db_con.php");
             </footer>
         </body>
     </html>";
-
-
+    
     if(array_key_exists('Cambiardatos', $_POST)) {
         
         $nom=$_POST['nombre'];
@@ -105,7 +105,5 @@ require("db_con.php");
         }else {
             echo "Error updating record: " . $conn->error;
           }
-        
-    }
-
+        }
 ?>

@@ -11,15 +11,13 @@ CREATE TABLE usuarios (
 );
 
 CREATE TABLE comentarios (
-  ID int(10) PRIMARY KEY,
-  FECHA varchar(10) NOT NULL,
-  RECEP text(40) NOT NULL,
-  ALIAS varchar(20) NOT NULL,
-  MSG varchar(280) NOT NULL,
-  EMISOR varchar(40) NOT NULL,
-
-  FOREIGN KEY (emisor) REFERENCES usuarios(Email)
-
+  ID int(4) PRIMARY KEY,
+  NRECEP varchar(20) NOT NULL,
+  ARECEP varchar(20) NOT NULL,
+  ERECEP varchar(40) NOT NULL,
+  Telefono int(8) NOT NULL,
+  MSG varchar(8000) NOT NULL,
+  EMISOR varchar(40) NOT NULL
 );
 
 
@@ -28,7 +26,7 @@ INSERT INTO usuarios VALUES  ('Iker','Valcarcel','ikervalcarcel@gmail.com','9263
 INSERT INTO usuarios VALUES  ('test1','test1','test1@gmail.com','42918286-X', 429182866,'2001/05/14','seguridad');
 
 
-INSERT INTO comentarios VALUES  (0000000001,'2021/10/22','test1@gmail.com','xXMinecrafterXx','Eres muy pesado, no me importa tu vida ','ikervalcarcel@gmail.com');
-
+INSERT INTO comentarios VALUES  (0000,'test1','test1','test1@gmail.com',429182866,'Eres muy pesado, no me importa tu vida ','ikervalcarcel@gmail.com');
+INSERT INTO comentarios VALUES  (0001,'Endika','Eiros','endika.eiros@gmail.com',671024023,'Se pone  a hacer cosas extra cuando las obligatorias no estan erminadas','ikervalcarcel@gmail.com');
 
 COMMIT;

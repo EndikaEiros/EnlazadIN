@@ -10,7 +10,9 @@
 #  }
   
   $datos = mysqli_query($conn, 'SELECT * FROM usuarios ORDER BY DNI;')or die (mysqli_error($conn));
-  $foro = mysqli_query($conn, 'SELECT * FROM comentarios ORDER BY RAND() LIMIT 5;')or die (mysqli_error($conn));
+  #$foro = mysqli_query($conn, 'SELECT * FROM comentarios ORDER BY RAND() LIMIT 5;')or die (mysqli_error($conn));
+  $foro = mysqli_query($conn, 'SELECT * FROM comentarios ORDER BY ID;')or die (mysqli_error($conn));
+  $id = mysqli_query($conn, 'SELECT MAX(ID) FROM comentarios;')or die (mysqli_error($conn));
 
   #mysqli_close($conn);
 ?>
