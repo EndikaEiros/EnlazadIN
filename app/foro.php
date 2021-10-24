@@ -1,26 +1,39 @@
 <?php
  require("db_con.php");
-?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>PHP TEST</title>
-  </head>
-  <body>
  
-  <table>
-    <?php foreach($foro as $comentario) : ?> 
-    <tr>
-        <td><?php echo $comentario['ID'];?></td>
-        <td><?php echo $comentario['NRECEP']; ?></td>
-        <td><?php echo $comentario['ARECEP']; ?></td>
-        <td><?php echo $comentario['ERECEP']; ?></td>
-        <td><?php echo $comentario['Telefono']; ?></td>
-        <td><?php echo $comentario['MSG']; ?></td>
-        <!-- <td><?php echo $comentario['EMISOR']; ?></td> -->
-    </tr>
-    <?php endforeach; ?>
-    </table>
-  </body>
-</html>
+ foreach($foro as $comentario) :
+  $ID = $comentario['ID'];
+
+  $NRECEP = $comentario['NRECEP']; 
+  $ARECEP = $comentario['ARECEP']; 
+  $ERECEP = $comentario['ERECEP'];
+  $Telefono = $comentario['Telefono'];
+  $MSG = $comentario['MSG'];
+    echo
+    "<!DOCTYPE html>
+    <html lang='es'>
+    <body>
+      <table>
+        
+              <main>
+                  <form name='datos' method='post'>
+                      <h1>Cambio de datos de comentarop</h1>
+                      ID: <input type='text' name='ID' value={$ID}><br>
+                      NRECEP: <input type='text' name='NRECEP' value={$NRECEP}><br>
+                      ARECEP: <input type='text' name='ARECEP' value={$ARECEP}><br>
+                      ERECEP: <input type='text' name='ERECEP' value={$ERECEP}><br>
+                      Telefono: <input type='text' name='Telefono' value={$Telefono}><br>
+                      MSG: <input type='text' name='MSG' value={$MSG}><br>
+                      <input type='submit' name='Cambiardatos' class='button' value='Cambiar Datos' />
+                  </form>
+                  <form action='iniciado.html'>
+                      <button id='volver' class='button'>Volver</button> <!-- Botón que vuelve atras. -->
+                  </form>
+              </main>
+
+        </table>
+      </body>
+    </html>";
+endforeach;
+
+?>
