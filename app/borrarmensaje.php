@@ -1,7 +1,6 @@
 <?php
     require("db_con.php");
-    session_start();
-    $id = $_SESSION['id'];
+    $id = $_GET['id'];
 
     $sql = "DELETE FROM comentarios WHERE ID = {$id}";
   

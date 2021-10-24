@@ -41,10 +41,8 @@
             <p>{$MSG}</p>
             
             <button id='modificar' onclick='return redireccion({$ID})' class='button'>Modificar mensaje</button> <!-- Botón que lleva a modificar el mensaje. -->
+            <button type='button' onclick = 'return confirmar({$ID})' value='Enviar'>Registrarse</button> <br>
             
-            <form action='confirmar-borrado.html?id={$ID}'>
-                <button id='eliminar' class='button'>Eliminar mensaje</button> <!-- Botón que elimina el mensaje. -->
-            </form>
         </div>
       ";
 endforeach;
