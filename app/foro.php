@@ -19,7 +19,6 @@
         <td><?php echo $comentario['Telefono']; ?></td>
         <td><?php echo $comentario['MSG']; ?></td>
         <!-- <td><?php echo $comentario['EMISOR']; ?></td> -->
-        
     </tr>
     <?php endforeach; ?>
     </table>
