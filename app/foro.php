@@ -39,8 +39,10 @@
           <div id={$ID}>
             <p>{$ERECEP}</p>
             <p>{$MSG}</p>
+            
             <button id='modificar' onclick='return redireccion({$ID})' class='button'>Modificar mensaje</button> <!-- Botón que lleva a modificar el mensaje. -->
-            <form action='confirmar-borrado.html'>
+            
+            <form action='confirmar-borrado.html?id={$ID}'>
                 <button id='eliminar' class='button'>Eliminar mensaje</button> <!-- Botón que elimina el mensaje. -->
             </form>
         </div>
@@ -52,28 +54,4 @@ echo
   </body>
 </html>
 ";
-
-function borrarmsg($ID){
-
-
-   
-
-    require("db_con.php");
-    
-    $sql = "DELETE FROM comentarios WHERE ID = {$ID}";
-  
-    if ($mysqli->query($sql)) {
-        printf("Se ha borrado correctamente.<br />");
-        echo "Se ha borrado correctamente.<br />"; 
-    } 
-    else{
-        printf("Error inesperado al borrar : %s<br />", $mysqli->error);
-    }
-
-}
-
-
-
-
-
 ?>
